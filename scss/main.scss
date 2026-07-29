@@ -1,0 +1,170 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+    margin: 0;
+    font-family: $fuente-principal;
+    background-color: $color-claro;
+    color: $color-oscuro;
+}
+
+
+.header {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: $color-secundario;
+    color: white;
+
+    .nav__toggle {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .nav__menu {
+        display: none;
+        
+        &.activo {
+            @include flex-columna;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: $color-secundario;
+            padding: 1rem;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 0;
+        }
+    }
+}
+
+.hero {
+    @include flex-columna;
+    @include flex-centro;
+    height: 60vh;
+    text-align: center;
+    background-color: $color-primario;
+    color: $color-secundario;
+}
+
+// 1. Variables de colores de marca
+$colores-redes: (
+  'facebook': #1877f2,
+  'instagram': #e1306c,
+);
+
+// 2. Estilos del Footer
+.footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 2rem;
+  text-align: center;
+
+  p {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  // Contenedor de redes sociales
+  .redes-sociales {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; // Espaciado entre iconos
+
+    li {
+      display: inline-block;
+    }
+  }
+
+  // Enlaces de las redes
+  .social-link {
+    text-decoration: none;
+    color: #aaaaaa;
+    font-weight: bold;
+    transition: color 0.3s ease;
+
+    // Bucle Sass para asignar colores en hover automáticamente
+    @each $red, $color in $colores-redes {
+      &.#{$red}:hover {
+        color: $color;
+      }
+    }
+  }
+}
+
+.menu-section {
+    padding: 4rem 2rem;
+    background-color: $color-claro;
+    text-align: center;
+
+    h2 {
+        color: $color-secundario;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    &__img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover; /* Evita que la foto de las pupusas se deforme */
+    }
+
+    &__content {
+        padding: 1.5rem;
+        text-align: left;
+
+        h3 {
+            margin: 0 0 0.5rem 0;
+            color: $color-secundario;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+    }
+
+    &__price {
+        display: inline-block;
+        font-weight: bold;
+        color: white;
+        background-color: $color-primario;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+    }
+}
+
