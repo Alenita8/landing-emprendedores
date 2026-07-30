@@ -75,18 +75,32 @@
     </div>
 </section>
 
-        </section>
-         <section id="contact" class="bg-alt">
-        <div class="container">
-            <h2>Contacto</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Nombre" required>
-                <input type="email" placeholder="Correo" required>
-                <textarea rows="5" placeholder="Mensaje"></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </section>
+
+<section id="contact" class="bg-alt">
+    <div class="container">
+        <h2>Contacto para Eventos</h2>
+        
+        <form id="formulario" class="contact-form">
+            <input name="nombre" placeholder="Nombre" required>
+            <input name="correo" type="email" placeholder="Correo" required>
+            
+            <select name="plan">
+                <option value="gratis">Evento</option>
+                <option value="emprendedor">Caja caliente</option>
+                <option value="empresa">Evento de empresa</option>
+            </select>
+            
+            <button type="submit">Registrarme</button>
+        </form>
+
+        <p id="error" style="color:red"></p>
+        <ul id="lista-contactos"></ul>
+        <button id="guardar">Descargar contactos (JSON)</button>
+    </div>
+</section>
+
+
+
     </main>
    <footer class="footer" id="Contacto">
     <p>&copy; 2026 Cheros. Todos los derechos reservados.</p>
@@ -98,6 +112,6 @@
 </footer>
 
 
-    <script src="js/main.js"></script>
+    <script type="module" src="src/js/main.ts"></script>
 </body>
 </html>

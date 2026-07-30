@@ -1,0 +1,40 @@
+{
+  "name": "emprende-landing",
+  "version": "1.0.0",
+  "description": "Landing page profesional migrada a control de versiones, TypeScript y POO\\r como actividad de las sesiones 13-16.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com"
+  },
+  "homepage": "https://github.com",
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.1.5"
+  },
+  "dependencies": {
+    "detect-libc": "^2.1.2",
+    "fsevents": "^6.5.0",
+    "lightningcss": "^1.33.0",
+    "lightningcss-win32-x64-msvc": "^1.33.0",
+    "nanoid": "^3.3.16",
+    "picocolors": "^1.1.1",
+    "picomatch": "^4.0.5",
+    "postcss": "^8.5.24",
+    "rolldown": "^1.1.5",
+    "source-map-js": "^1.2.1",
+    "tinyglobby": "^0.2.17"
+  }
+}
